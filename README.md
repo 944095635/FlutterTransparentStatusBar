@@ -7,6 +7,11 @@
 
 主要核心内容：
 
+注释的行 仅仅只有小米手机支持，如果取消注释，其他手机会出现黑色条纹，保持代码注释，所有手机的都支持。
+增加XML文件可以去除 启动APP的时候出现的黑色顶部 色块，但是 因为注释了行，所以 小米手机会出现 灰色的顶部条，目前已经是能实现的最优解决方案
+
+路径：transparent_status_bar\android\app\src\main\res\values\styles.xml
+
 ````xml
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
@@ -28,10 +33,9 @@
 </resources>
 ````
 
-注释的行 仅仅只有小米手机支持，如果取消注释，其他手机会出现黑色条纹，保持代码注释，所有手机的都支持。但是启动的时候顶部会 闪过一个黑条。目前没有解决
 
 //设置任务栏透明
-//setBarStatus(false);
+setBarStatus(false);
 
 ```dart
 setBarStatus(bool isDarkIcon, {Color color: Colors.transparent}) async {
